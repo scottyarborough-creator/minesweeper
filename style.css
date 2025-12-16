@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#scoreboard {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#reset-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+#game-board {
+    display: grid;
+    /* This will be set dynamically by JavaScript based on the grid size */
+    border: 3px solid #666;
+}
+
+.cell {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    border: 1px solid #999;
+    cursor: pointer;
+    background-color: #bbb; /* Unrevealed cell color */
+    user-select: none; /* Prevent text selection */
+}
+
+/* Style for cells that have been clicked (revealed) */
+.cell.revealed {
+    background-color: #ddd;
+    border: 1px solid #ccc;
+    cursor: default;
+}
+
+/* Specific styles for number colors */
+.n1 { color: blue; }
+.n2 { color: green; }
+.n3 { color: red; }
+.n4 { color: darkblue; }
+.n5 { color: brown; }
+.n6 { color: cyan; }
+.n7 { color: black; }
+.n8 { color: gray; }
+
+/* Styles for mines and flags */
+.cell.mine {
+    background-color: red;
+    color: white;
+}
+
+.cell.flag::before {
+    content: '🚩'; /* Flag symbol */
+    font-size: 18px;
+}
+
+#message {
+    margin-top: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
